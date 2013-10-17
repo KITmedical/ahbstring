@@ -5,7 +5,7 @@ namespace ahb {
     bool
     parseKeyValue(const std::string& inputString, const std::string& delimiterString, std::string& key, std::string& value)
     {
-      int delimiterIdx = inputString.find(delimiterString);
+      unsigned delimiterIdx = inputString.find(delimiterString);
       if (delimiterIdx == std::string::npos) {
         return false;
       }
