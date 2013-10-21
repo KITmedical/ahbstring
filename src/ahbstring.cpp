@@ -15,5 +15,17 @@ namespace ahb {
 
       return true;
     }
+
+    std::string
+    toHexString(const std::string& p_str)
+    {
+      std::stringstream ss;
+      ss << "0x";
+      for (size_t i = 0; i < p_str.size(); i++) {
+        ss << std::setw(2) << std::setfill('0') << std::hex << (unsigned int)p_str[i] << " ";
+      }
+      return ss.str();
+    }
+
   }
 }
