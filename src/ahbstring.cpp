@@ -27,5 +27,20 @@ namespace ahb {
       return ss.str();
     }
 
+    std::string&
+    replace(std::string& inputString, const std::string& oldString, const std::string& newString)
+    {
+      if (inputString.empty()) {
+        return inputString;
+      }
+      size_t replaceStart = 0;
+      while ((replaceStart = inputString.find(oldString, replaceStart)) != std::string::npos) {
+        inputString.replace(replaceStart, oldString.length(), newString);
+        replaceStart += newString.length(); // avoid infinite loop if newString contains oldString
+      }
+
+      return inputString;
+    }
+
   }
 }

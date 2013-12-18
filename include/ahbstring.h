@@ -56,6 +56,17 @@ namespace ahb {
 
       return res;
     }
+
+    /**
+     * Replace all occurences of string oldString with string newString in string inputString
+     * Qt: QString::replace
+     * Python: inputString = inputString.replace(oldString, newString)
+     * \param[in] inputString string in which substitution is to be performed
+     * \param[in] oldString string that will be substitution
+     * \param[in] newString replacement for oldString
+     * \return reference to new inputString with all oldString replaced by newString
+     */
+    std::string& replace(std::string& inputString, const std::string& oldString, const std::string& newString);
   }
 }
 
