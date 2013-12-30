@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
+#include <vector>
 
 
 namespace ahb {
@@ -31,6 +32,18 @@ namespace ahb {
       std::stringstream ss;
 
       ss << p_arg;
+
+      return ss.str();
+    }
+
+    // partial specialization for std::vector, works if vector contents supports operator<<
+    template<class T> std::string toString(const std::vector<T>& p_arg)
+    {
+      std::stringstream ss;
+
+      for (typename std::vector<T>::const_iterator iter = p_arg.begin(); iter != p_arg.end(); ++iter) {
+        ss << *iter << " ";
+      }
 
       return ss.str();
     }
