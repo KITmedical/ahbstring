@@ -59,7 +59,7 @@ catkin_package(
 ## Build ##
 ###########
 
-SET(CMAKE_CXX_FLAGS "-O2 -Wall -Werror")
+SET(CMAKE_CXX_FLAGS "-O2 -Wall -Wextra -Werror")
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
