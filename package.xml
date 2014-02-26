@@ -2,7 +2,7 @@
 <package>
   <name>ahbstring</name>
   <version>0.0.0</version>
-  <description>The ahbstring package</description>
+  <description>ahb utilties: operations on strings</description>
   <maintainer email="andreas.bihlmaier@gmx.de">Andreas Bihlmaier</maintainer>
   <license>MIT</license>
 
