@@ -12,10 +12,28 @@ namespace ahb {
 namespace string {
 
 /**
+ * Return true if string s starts with prefix, otherwise return false.
+ * Python: s.startswith(prefix)
+ * \param[in] s string checked for prefix
+ * \param[in] prefix prefix
+ * \return true iff string s starts with prefix
+ */
+bool startswith(const std::string& s, const std::string& prefix);
+
+/**
+ * Return true if string s ends with suffix, otherwise return false.
+ * Python: s.endswith(suffix)
+ * \param[in] s string checked for suffix
+ * \param[in] suffix suffix
+ * \return true iff string s ends with suffix
+ */
+bool endswith(const std::string& s, const std::string& suffix);
+
+/**
  * Strip whitespace from left side of string
  * Python: s = s.lstrip()
  * Boost: trim_left(s)
- * \param[in] s string to be stripped
+ * \param[in,out] s string to be stripped
  * \return reference to stripped string s
  */
 std::string& lstrip(std::string& s);
@@ -24,7 +42,7 @@ std::string& lstrip(std::string& s);
  * Strip whitespace from right side of string
  * Python: s = s.rstrip()
  * Boost: trim_right(s)
- * \param[in] s string to be stripped
+ * \param[in,out] s string to be stripped
  * \return reference to stripped string s
  */
 std::string& rstrip(std::string& s);
@@ -33,7 +51,7 @@ std::string& rstrip(std::string& s);
  * Strip whitespace from both sides of string
  * Python: s = s.strip()
  * Boost: trim(s)
- * \param[in] s string to be stripped
+ * \param[in,out] s string to be stripped
  * \return reference to stripped string s
  */
 std::string& strip(std::string& s);

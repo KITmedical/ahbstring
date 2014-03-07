@@ -7,6 +7,18 @@
 namespace ahb {
 namespace string {
 
+bool
+startswith(const std::string& s, const std::string& prefix)
+{
+  return s.substr(0, prefix.size()) == prefix;
+}
+
+bool
+endswith(const std::string& s, const std::string& suffix)
+{
+  return s.substr(s.size() - suffix.size()) == suffix;
+}
+
 std::string&
 lstrip(std::string& s) {
   s.erase(s.begin(), std::find_if(s.begin(), s.end(), std::not1(std::ptr_fun<int, int>(std::isspace))));
