@@ -10,12 +10,24 @@ namespace string {
 bool
 startswith(const std::string& s, const std::string& prefix)
 {
+  if (prefix.empty()) {
+    return true;
+  }
+  if (s.size() < prefix.size()) {
+    return false;
+  }
   return s.substr(0, prefix.size()) == prefix;
 }
 
 bool
 endswith(const std::string& s, const std::string& suffix)
 {
+  if (suffix.empty()) {
+    return true;
+  }
+  if (s.size() < suffix.size()) {
+    return false;
+  }
   return s.substr(s.size() - suffix.size()) == suffix;
 }
 
