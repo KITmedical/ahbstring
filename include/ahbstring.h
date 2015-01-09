@@ -7,6 +7,10 @@
 #include <vector>
 #include <map>
 
+#if __cplusplus > 199711L
+#include <unordered_map>
+#endif
+
 
 namespace ahb {
 namespace string {
@@ -107,6 +111,18 @@ template<class T, class U> std::string toString(const std::map<T,U>& p_arg)
 
   return ss.str();
 }
+#if __cplusplus > 199711L
+template<class T, class U> std::string toString(const std::unordered_map<T,U>& p_arg)
+{
+  std::stringstream ss;
+
+  for (typename std::unordered_map<T,U>::const_iterator iter = p_arg.begin(); iter != p_arg.end(); ++iter) {
+    ss << iter->first << ": " << iter->second << ", ";
+  }
+
+  return ss.str();
+}
+#endif
 
 /**
  * Return string of characters in input string to their hex value
